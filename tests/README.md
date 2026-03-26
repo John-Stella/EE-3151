@@ -1,2 +1,4 @@
 # EE-3151
-Labs for EE3151 using the Quanser Qube-Servo 3
+https://docs.quanser.com/quanser-sdk/documentation/qube_servo3_usb.html
+
+https://docs.quanser.com/quanser-sdk/documentation/python/index.html
