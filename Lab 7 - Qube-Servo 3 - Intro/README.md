@@ -1,4 +1,4 @@
-# 🏗️ Introduction to Rotary Pendulum Dynamics and Control
+# Introduction to Rotary Pendulum Dynamics and Control
 
 The rotary pendulum system, often referred to as the **Furuta Pendulum**, is a quintessential model in physics and control engineering. It serves as a practical platform for exploring rotational dynamics, system modeling, and advanced control strategies like swing-up and stabilization.
 
