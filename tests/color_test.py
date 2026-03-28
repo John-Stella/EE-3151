@@ -1,0 +1,7 @@
+print("\033[1;31;40mTEST\033[0m")
+print("\033[2;31;40mTEST\033[0m")
+print("\033[0;31;40mTEST\033[0m")
+print("\033[2;32;40mTEST\033[0m")
+print("\033[3;33;40mTEST\033[0m")
+print("\033[4;34;40mTEST\033[0m")
+print("This is normal text after resetting.")
