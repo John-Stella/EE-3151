@@ -42,6 +42,7 @@ State-space representation offers a modern approach to control, handling multi-i
 
 ### The State Vector
 For the rotary pendulum, the state vector $x(t)$ captures the entire dynamic behavior of the system:
+
 $$x(t) = \begin{bmatrix} \theta(t) & \alpha(t) & \dot{\theta}(t) & \dot{\alpha}(t) \end{bmatrix}^T$$
 
 ### Linear State-Space Equations
