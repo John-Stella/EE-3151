@@ -3,7 +3,7 @@ This section of the lab focuses on the different hardware pieces and parameters 
 
 Each of the following sections relate to one of the provided Python scripts in this folder which showcase different parts of the control loop.
 
-**Please Attatch The Inertial Disk to the Qube-Servo 3 Before Continuing**
+**!!! Please Attatch The Inertial Disk to the Qube-Servo 3 Before Continuing !!!**
 
 ---
 
