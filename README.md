@@ -11,19 +11,33 @@ https://github.com/quanser/Quanser_Academic_Resources/
 
 ## Repository Structure
 .
+
 ├── Lab 7 - Qube-Servo 3 - Intro/
+
 │ ├── Part 0/
+
 │ ├── Part 1/
+
 │ ├── Part 2/
+
 │ └── README.md
+
 │
+
 ├── Lab 8 - Qube-Servo 3 - Pendulum/
+
 │ ├── Part 1/
+
 │ ├── Part 2/
+
 │ ├── Part 3/
+
 │ ├── Part 4/
+
 │ └── README.md
+
 │
+
 └── README.md
 
 
