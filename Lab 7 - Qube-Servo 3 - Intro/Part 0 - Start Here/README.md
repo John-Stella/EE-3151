@@ -1,4 +1,4 @@
-# QUBE-Servo 3 Lab: Python Control & Homing
+# QUBE-Servo 3 Lab: Python Control & Homing Example
 
 This guide explains how to edit, understand, and run the Python scripts (`*.py` files) used to control the Quanser QUBE-Servo 3 hardware.
 

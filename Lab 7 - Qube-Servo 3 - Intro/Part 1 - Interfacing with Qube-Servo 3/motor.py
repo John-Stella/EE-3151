@@ -13,6 +13,9 @@ enable_chan = np.array([0], dtype=np.uint32)
 
 board = HIL()
 
+# control parameters
+voltage = 0.5;
+
 try:
     board.open(board_type, board_identifier)
     
@@ -23,9 +26,8 @@ try:
     
     start_time = time.time()
     while time.time() - start_time < 3.0:
-        # 2. Command 0.5V to the motor
-        # Using [0.5] as a 1-element array
-        board.write_analog(motor_chan, 1, np.array([0.5], dtype=np.float64))
+        # 2. Command voltage to the motor
+        board.write_analog(motor_chan, 1, np.array([voltage], dtype=np.float64))
         
         # 3. Read the encoder
         encoder_buffer = np.zeros(1, dtype=np.int32)

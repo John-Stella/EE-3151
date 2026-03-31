@@ -9,8 +9,8 @@ board_identifier = "0"
 COUNTS_PER_REV = 2048
 DEG_PER_COUNT = 360.0 / COUNTS_PER_REV
 
-# --- PID Gains ---
-Kp, Ki, Kd = 0.12, 0.01, 0.005
+# control parameters
+Kp, Ki, Kd = 0.001, 0.001, 0.001
 amplitude, frequency = 90.0, 0.5 
 
 # --- Data Collection ---
