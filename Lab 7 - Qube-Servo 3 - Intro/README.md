@@ -14,7 +14,7 @@ To ensure consistency between mathematical models and hardware, the following co
 * **Pendulum Angle ($\alpha$):** Also positive in the CCW direction.
 * **Vertical Position:** In the context of the inverted pendulum, $\alpha = 0$ represents the perfectly upright position.
 
-![Figure 1 from 006_pendulum_free_body_diagram.pdf - Model conventions of rotary pendulum](./Resources/Images/F1_Model_conventions_of_rotary_pendulum.png)
+![Figure 1 from 006_pendulum_free_body_diagram.pdf - Model conventions of rotary pendulum](./figures/F1_Model_conventions_of_rotary_pendulum.png)
 
 ---
 
@@ -55,7 +55,7 @@ $$y(t) = Cx(t) + Du(t)$$
 * **C:** Output matrix ($m \times n$), where $y(t)$ typically includes measurable variables like $\theta$ and $\alpha$.
 * **D:** Feed-forward matrix ($m \times r$).
 
-![Figure 2 from 007_pendulum_state_space_model.pdf - Block diagram of state-space system](./Resources/Images/F2_Block_diagram_of_state-space_system.png)
+![Figure 2 from 007_pendulum_state_space_model.pdf - Block diagram of state-space system](./figures/F2_Block_diagram_of_state-space_system.png)
 
 ---
 
