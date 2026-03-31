@@ -10,7 +10,7 @@ board_type = "qube_servo3_usb"
 K_RAD = 0.00307
 
 # --- Channels ---
-encoder_chans = np.array([0, 1], dtype=np.uint32)    # Position [cite: 79]
+encoder_chans = np.array([0, 1], dtype=np.uint32)    # Position
 tach_chans = np.array([14000, 14001], dtype=np.uint32) # Velocity 
 motor_chan = np.array([0], dtype=np.uint32)
 enable_chan = np.array([0], dtype=np.uint32)
@@ -24,7 +24,7 @@ try:
     board.open(board_type, "0")
     board.write_digital(enable_chan, 1, np.array([1], dtype=np.int32))
     
-    print("Hold pendulum upright. Using Digital Tachometers for velocity...")
+    print("Hold pendulum upright...")
     input("Press Enter to start...")
 
     while True:
