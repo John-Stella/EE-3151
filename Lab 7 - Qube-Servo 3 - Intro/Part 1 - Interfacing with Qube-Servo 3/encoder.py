@@ -17,11 +17,11 @@ try:
 
     print("Reading encoder. Move the arm to see values change. Press Ctrl+C to exit")
     
-    while true
+    while True:
         # 2. Read the encoder counts
         # The buffer must be a numpy array of the same size as encoder_channels
-        encoder_counts = np.zeros(len(encoder_channels), dtype=np.int32)
-        board.read_encoder(encoder_channels, encoder_counts)
+        encoder_counts = np.zeros(1, dtype=np.int32)
+        board.read_encoder(encoder_channels, 1, encoder_counts)
         
         # Output the count for the first channel
         print(f"Encoder Count (Channel 0): {encoder_counts[0]}", end="\r")
