@@ -23,6 +23,8 @@ We use a form of Full-State Feedback, which essentially combines Proportional (P
 
 $$u = k_{p,\theta}(\theta_r - \theta) - k_{p,\alpha}\alpha - k_{d,\theta}\dot{\theta} - k_{d,\alpha}\dot{\alpha}$$
 
+![figure](./imgs/pd_block.png)
+
 ### Breaking down the Equation:
 * **$u$**: The control output (Voltage) sent to the Qube-Servo 3.
 * **$k_{p,\theta}(\theta_r - \theta)$**: The **Motor Position** term. It tries to move the motor to the reference angle $\theta_r$ defined in the code.
