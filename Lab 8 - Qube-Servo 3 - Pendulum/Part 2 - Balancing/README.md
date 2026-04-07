@@ -4,7 +4,7 @@ In this section, we will construct the control system that will balance the pend
 ---
 
 ## Part 1 - Building the Control Logic
-![figure]()
+![figure](./img/pd_block.png)
 
 In the last section, I introduced the PD equation and its parts. Let's learn how to build it.
 
