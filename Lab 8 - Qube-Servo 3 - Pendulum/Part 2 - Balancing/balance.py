@@ -28,7 +28,7 @@ signal.signal(signal.SIGINT, sig_handler)
 
 
 #region: Setup
-simulationTime = 30 # will run for 30 seconds
+simulationTime = 600 # will run for 30 seconds
 
 
 scopePendulum = Scope(
@@ -38,12 +38,26 @@ scopePendulum = Scope(
     yLabel='Position (rad)')
 scopePendulum.attachSignal(name='Pendulum - alpha (rad)',  width=1)
 
+scopePendulumDot = Scope(
+    title='Pendulum alpha_dot',
+    timeWindow=10,
+    xLabel='Time (s)',
+    yLabel='d/dt(Position (rad))')
+scopePendulumDot.attachSignal(name='d/dt(Position (rad))',  width=1)
+
 scopeBase = Scope(
     title='Base encoder - theta (rad)',
     timeWindow=10,
     xLabel='Time (s)',
     yLabel='Position (rad)')
 scopeBase.attachSignal(name='Base - theta (rad)',  width=1)
+
+scopeBaseDot = Scope(
+    title='Base theta_dot',
+    timeWindow=10,
+    xLabel='Time (s)',
+    yLabel='d/dt(Position (rad))')
+scopeBaseDot.attachSignal(name='d/dt(Position (rad))',  width=1)
 
 scopeVoltage = Scope(
     title='Motor Voltage',
@@ -80,12 +94,14 @@ def control_loop():
     countMax = frequency / 50
     count = 0
 
-    if qubeVersion == 2:
-        QubeClass = QubeServo2
-        K = np.array([-1, 34.75, -1.495, 3.111])
-    else:
-        QubeClass = QubeServo3
-        K = np.array([-2, 30, -2, 2.5])
+    QubeClass = QubeServo3
+    
+    # ------------------------------------------------------------------------------------------
+    # Control Gains
+    #
+    # [k_p_theta, k_p_alpha, k_d_theta, k_d_alpha]
+    K = np.array([-2, 30, -2, 2.5])
+    # ------------------------------------------------------------------------------------------
 
     with QubeClass(hardware=hardware, pendulum=pendulum, frequency=frequency) as myQube:
 
@@ -109,7 +125,7 @@ def control_loop():
             theta_dot, state_theta_dot = ddt_filter(theta, state_theta_dot, 50, 1/frequency)
             alpha_dot, state_alpha_dot = ddt_filter(alpha, state_alpha_dot, 100, 1/frequency)
 
-            command_deg = -45
+            command_deg = 0
 
             states = command_deg*np.array([np.pi/180, 0, 0, 0]) - np.array([theta, alpha, theta_dot, alpha_dot])
 
@@ -125,7 +141,9 @@ def control_loop():
             count += 1
             if count >= countMax:
                 scopePendulum.sample(timeStamp, [states[1]])
+                scopePendulumDot.sample(timeStamp, [np.clip(alpha_dot,-10,10)])
                 scopeBase.sample(timeStamp, [states[0]])
+                scopeBaseDot.sample(timeStamp, [theta_dot])
                 scopeVoltage.sample(timeStamp,[voltage])
                 count = 0
 
