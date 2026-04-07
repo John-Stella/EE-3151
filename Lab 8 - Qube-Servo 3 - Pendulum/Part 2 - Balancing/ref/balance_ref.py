@@ -98,9 +98,9 @@ def control_loop():
     
     # ------------------------------------------------------------------------------------------
     # Control Gains
-    # Define a vector that contains the following PD control gain constants
-    # 
-    K = #[Replace this with a vector of the four control gains, don't forget to remove the '#']
+    #
+    # [k_p_theta, k_p_alpha, k_d_theta, k_d_alpha]
+    K = np.array([-2, 30, -2, 2.5])
     # ------------------------------------------------------------------------------------------
 
     with QubeClass(hardware=hardware, pendulum=pendulum, frequency=frequency) as myQube:
@@ -125,14 +125,19 @@ def control_loop():
             theta_dot, state_theta_dot = ddt_filter(theta, state_theta_dot, 50, 1/frequency)
             alpha_dot, state_alpha_dot = ddt_filter(alpha, state_alpha_dot, 100, 1/frequency)
 
-            # User Build Area ----------------------------------------------------------------------------
-            # Add code inside the lines
+            command_deg = 0
 
-            # -------------------------------------------------------------------------------------------
-            
+            states = np.array([(command_deg*np.pi/180-theta), -alpha, -theta_dot, -alpha_dot])
+            #states = command_deg*np.array([np.pi/180, 0, 0, 0]) - np.array([theta, alpha, theta_dot, alpha_dot])
+
+            if alpha_degrees > 10:
+                voltage = 0
+            else:
+                voltage = -1*np.dot(K, states)
+
             # # Write commands
             myQube.write_voltage(voltage)
-            
+
             # Plot to scopes
             count += 1
             if count >= countMax:
