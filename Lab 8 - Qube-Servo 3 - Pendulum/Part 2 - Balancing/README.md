@@ -14,12 +14,12 @@ Open the `balance.py` script in Notepad++. You will be adding code provided in t
 Find the section of code that looks like the block below:
  
 ```python
-    # ------------------------------------------------------------------------------------------
-    # Control Gains
-    # Define a vector that contains the following PD control gain constants
-    # 
-    K = #[Replace this with a vector of the four control gains, don't forget to remove the '#']
-    # ------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------
+# Control Gains
+# Define a vector that contains the following PD control gain constants
+# 
+K = #[Replace this with a vector of the four control gains, don't forget to remove the '#']
+# ------------------------------------------------------------------------------------------
 ```
 
 Construct a vector using the example method and table shown below. We use Numpy arrays (`np.array()`) because it hold variables in a convenient format for mathematical operations, like MATLAB matricies. 
@@ -81,10 +81,10 @@ For the `theta` element we need to subtract it from the target angle and convert
 We want to implement a safety system into the control logic that disables the motor if the pendulum is too far outside the balance point. This prevents the motor and pendulum from swinging out of control. It is written in python like this:
 
 ```python
-			if alpha_degrees > 10:
-                voltage = 0
-            else:
-                voltage = 
+if alpha_degrees > 10:
+    voltage = 0
+else:
+    voltage = 
 ``` 
 
 We can now calculate the output voltage of the balance control signal. The original voltage control signal can be recontructed by from our vectors by performing the dot product of the two vectors.
