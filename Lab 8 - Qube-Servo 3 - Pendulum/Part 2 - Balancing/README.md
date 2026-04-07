@@ -67,7 +67,9 @@ states = np.array([])
 #### State Varible Adjustments
 We need to adjust the elements of the `states` vector to include relative term infomation from the equation:
 
-$$u = k_{p,\theta}(\theta_r - \theta) - k_{p,\alpha}\alpha - k_{d,\theta}\dot{\theta} - k_{d,\alpha}\dot{\alpha}$$
+
+$$ u = k_{p,\theta}(\theta_r - \theta) - k_{p,\alpha}\alpha - k_{d,\theta}\dot{\theta} - k_{d,\alpha}\dot{\alpha} $$
+
 
 For the `theta` element we need to subtract it from the target angle and convert the target angle from degrees to radians. Do this by editing the `states =` line.
 
