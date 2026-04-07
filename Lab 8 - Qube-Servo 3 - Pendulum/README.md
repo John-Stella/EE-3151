@@ -1,2 +1,2 @@
-# EE-3151
-Labs for EE3151 using the Quanser Qube-Servo 3
+# Lab 8 - Rotary Pendulum
+>Start with `Part 1 - Pendulum Interfacing`
