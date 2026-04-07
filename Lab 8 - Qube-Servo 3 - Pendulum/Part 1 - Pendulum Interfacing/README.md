@@ -1,9 +1,9 @@
 # Lab 8 Section 1
-In this section we will explore the pendulum attachment for the Qube-Servo 3 with the goal of balancing the arm.
+In this section, we will explore the pendulum attachment for the Qube-Servo 3 with the goal of balancing the arm.
 
 ---
 
-## Part 1 - Important Varibles/Equations
+## Part 1 - Important Variables/Equations
 To successfully balance the pendulum, we first need to understand the data the Qube-Servo 3 provides and how that data is used to calculate the motor's response. 
 
 ### State Variables
@@ -60,19 +60,14 @@ In the provided Python script, you will see a function called `ddt_filter`.
 
 You don't need to worry about the internal algebra of this function for this lab. Just know that it takes the "chunky," non-continuous position data and converts it into a clean, usable velocity signal ($\dot{\theta}$ or $\dot{\alpha}$) that the controller can use to balance the arm.
 
-> **Courious about the ddt_filter function?** If you are interested in how we transform a continuous $s$-domain equation into digital friendly one using techniques like the **Tustin Transform**, I highly recommend taking the **DSP (Digital Signal Processing)** course offered here at the university!
+> **Courious about the ddt_filter function?** If you are interested in how we transform a continuous $s$-domain equation into a digital-friendly one using techniques like the **Tustin Transform**, I highly recommend taking the **DSP (Digital Signal Processing)** course offered here at the university!
 
 
 ## Part 3 - Run the Python Script 
-Run the python script in this module and answer the following questions in a word doc (Please export to **PDF** before turing in). 
+Run the Python script in this module and answer the following questions in a word doc (Please export to **PDF** before turning in). 
 
-### Q1 - 
+### Q1 - Inspect each state variable individually. Note what causes the variable to change and how it changes.
 
-### Q2 - 
+### Q2 - Hold the pendulum upright and as steady as possible, as if it were being balanced. What are the values/behavior of the state variables? Do you expect these values to act the same after the balancing control logic is introduced?
 
-### Q3 - 
-
----
-
-## Resources
-* [Resource Link 1]
+### Q3 - Let the pendulum hang down and make it oscillate slightly. What happens to the alpha_dot value as it passes its lowest point? Why might this behavior happen? Can you think of a way to prevent this behavior?
