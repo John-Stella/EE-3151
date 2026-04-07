@@ -98,4 +98,6 @@ We also need to reverse the direction of the signal to account for inverse motor
 **At this point, your control logic should be complete. The rest of the Python script will use the code to provide the Qube-Servo 3 a control signal and plot the state variables.**
 
 ## Part 2 - Run the Script 
-Save and Run the Python Code, then answer the following problems. 
+Save and Run the Python Code, then go to `analysis.md` for the last section of this lab. 
+
+*Note: You need to raise the pendulum to the upright position to engage the control loop.*
