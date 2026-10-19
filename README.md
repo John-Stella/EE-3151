@@ -82,6 +82,8 @@ https://github.com/quanser/Quanser_Academic_Resources/
 This material is adapted from the Quanser Academic Resources repository:  
 https://github.com/quanser/Quanser_Academic_Resources/
 
+The UofM's academic account with Google and Gemini was used to help compile and debug these labs.
+
 ---
 
 ## Notes
